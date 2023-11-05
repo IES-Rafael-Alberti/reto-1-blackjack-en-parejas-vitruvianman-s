@@ -1,14 +1,14 @@
 
-from game import player, deal, total_value, turn, cases, clean_terminal, clean_and_banner
+from game import player, deal, total_value, turn, automated_turn, cases, clean_terminal
 
-deck = 'A234567890JKQ'
+
 
 def match_1player():
     player1 = player()
-    player_crupier = 'crupier'
+    player_crupier = 'crupier' #trata al crupier, la máquina, como si fuera un 2 jugador automatizado.
 
-    player1_hand = deal(deck)
-    crupier_hand = deal(deck)
+    player1_hand = deal()
+    crupier_hand = deal()
 
     total_player1 = total_value(player1_hand)
     total_crupier = total_value(crupier_hand)
@@ -25,7 +25,11 @@ def match_1player():
         stand_player1 = False
         stand_player2 = False
 
-        clean_and_banner(player1, player_crupier, player1_hand, crupier_hand, total_player1, total_crupier, turn_counter)
+        clean_terminal()
+
+        print(f'Ronda {turn_counter}')
+        print(f'J1 - {player1} - {player1_hand} ({total_player1})')
+        print(f'J2 - {player_crupier} - {crupier_hand} ({total_crupier})') 
 
         if not stand_player1:
             result_player1 = turn(player1_hand, total_player1, player1)
@@ -39,7 +43,7 @@ def match_1player():
             pifiada = False
 
         elif not stand_player2:
-            result_player2 = turn(crupier_hand, total_crupier, player_crupier)
+            result_player2 = automated_turn(crupier_hand, total_crupier, player_crupier)
             if result_player2 == 'plantarse':
                 stand_player2 = True
             else:

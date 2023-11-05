@@ -16,16 +16,16 @@ def Modo_Juego():
         else:
             print("Por favor, ingresa una opción válida (1 o 2).")
 
-
-            
-            
-
     clean_terminal()
 
     return election
-
+"""
+Esta función permite elegir el modo de juego. Tiene un bucle while e ifs para controlar los errores.
+Cuando sea válido, retornara el valor
+"""
 
 def main():
+
     election = Modo_Juego()
 
     if election == 1:
@@ -34,7 +34,12 @@ def main():
    
     else:
         match_1player()
-        
+
+"""
+Si introduciste 1, llamara al main del archivo twoplayers.py
+Si introduciste 2, llamara al main del archivo oneplayer.py
+
+"""
 
 
 if __name__ == "__main__":

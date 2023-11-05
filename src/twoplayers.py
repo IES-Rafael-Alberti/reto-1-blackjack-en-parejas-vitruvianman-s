@@ -1,18 +1,20 @@
 
-from game import player, deal, total_value, turn, cases, clean_terminal, clean_and_banner
+from game import player, deal, total_value, turn, cases, clean_terminal
 
-deck = 'A234567890JKQ'
 
 def match_twoplayers():
 
     player1 = player()
     player2 = player()
+    # Se define el nombre de ambos
 
-    player1_hand = deal(deck)
-    player2_hand = deal(deck)
+    player1_hand = deal()
+    player2_hand = deal()
+    # Se les asigna una mano inicial a cada uno
 
     total_player1 = total_value(player1_hand)
     total_player2 = total_value(player2_hand)
+    #Se calcula el valor de su mano
 
     turn_counter = 1
 
@@ -20,19 +22,26 @@ def match_twoplayers():
 
     stand_player1 = False
     stand_player2 = False
+    # stand_player es una constante que se utiliza para saber si un jugador se ha plantado o no
+
     pifiada = True
+    #pifiada es una variable de control de flujo para que cuando el total del jugador 1 sea superior a 21, se salga del bucle automaticamente
 
     while not (stand_player1 and stand_player2) and (total_player1 <= 21 and total_player2 <= 21) and pifiada == True:
-        stand_player1 = False
-        stand_player2 = False
+    #mientras que stand_player 1 y 2 no sean los dos distintos, se contniua ejecutando el programa
+    #mientras que una mano no supere una mano de valor 21, se sigue ejecutando
 
-        clean_and_banner(player1, player2, player1_hand, player2_hand, total_player1, total_player2, turn_counter)
+        clean_terminal()
 
-        if not stand_player1:
+        print(f'Ronda {turn_counter}')
+        print(f'J1 - {player1} - {player1_hand} ({total_player1})')
+        print(f'J2 - {player2} - {player2_hand} ({total_player2})') 
+
+        if not stand_player1: #si el jugador no se ha plantado, ejecuta la funcion turn()
             result_player1 = turn(player1_hand, total_player1, player1)
             if result_player1 == 'plantarse':
                 stand_player1 = True
-            else:
+            else: #sino se cambiara la mano y valor antiguo por los nuevos
                 player1_hand = result_player1
                 total_player1 = total_value(player1_hand)
 
@@ -49,4 +58,4 @@ def match_twoplayers():
 
         turn_counter += 1
 
-    print(cases(player1_hand, player2_hand, player1, player2, total_player1, total_player2, turn_counter))
+    print(cases(player1_hand, player2_hand, player1, player2, total_player1, total_player2, turn_counter)) #imprimir el caso que ha ocurrido
