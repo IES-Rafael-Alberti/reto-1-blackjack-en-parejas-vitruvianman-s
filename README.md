@@ -1,6 +1,6 @@
 
 <img src="image/Vitruvian.png" alt="Vitruvian" width="400px;" height=400px;" style="display: block; margin: 0 auto;"/>
-
+![](./image/Vitruvian.png)
 
 ## EXPLICACIÓN BLACKJACK VITRUVIAN'S MAN'S
 
