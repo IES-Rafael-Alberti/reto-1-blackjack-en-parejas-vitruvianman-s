@@ -22,7 +22,7 @@ def match_twoplayers():
 
     stand_player1 = False
     stand_player2 = False
-    # stand_player es una cariable que se utiliza para saber si un jugador se ha plantado o no
+    # stand_player es una variable que se utiliza para saber si un jugador se ha plantado o no
 
     pifiada = True
     #pifiada es una variable de control de flujo para que cuando el total del jugador 1 sea superior a 21, se salga del bucle automaticamente

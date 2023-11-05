@@ -11,9 +11,9 @@ más ordenado
 ## FUNCIONAMIENTO BLACKJACK VITRUVIAN'S MAN'S
 
 ```
-En este documento analizaré y explicare la manera en la que funciona 
+En este documento analizaremos y explicaremos la manera en la que funciona 
 el programa.Para que sea más sencillo, 
-seguire el flujo del programa para explicarlo.Tenemos 4 archivos, 
+seguiremos el flujo del programa para explicarlo.Tenemos 4 archivos, 
 que contienen funciones y un archivo donde se realizan los tests de las funciones.
 ```
 
@@ -39,7 +39,7 @@ def player():
 
 ```
 
-Simplemente. retornara el nombre de usuario que haya decidido ponerse el usuario.
+Simplemente. retornara el nombre de usuario que haya decidido ponerse.
 
 ##### Deal()
 
@@ -210,7 +210,7 @@ if os.name == 'nt':
         os.system('clear')
 ```
 
-Esta función es para limpiar la terminal durante la ejecución, ese condicional es para que pueda ejecutarse tanto como en windows.
+Esta función es para limpiar la terminal durante la ejecución, ese condicional es para que pueda ejecutarse tanto en linux como en windows.
 
 ---
 
@@ -220,7 +220,7 @@ Esta función es para limpiar la terminal durante la ejecución, ese condicional
 
 ---
 
-Una vez explicado, como funcionan la mayoría de funciones que se iran viendo a lo largo del programa. Seguiré el flujo del mismo y comentando su funcionamiento.
+Una vez explicado, como funcionan la mayoría de funciones que se iran viendo a lo largo del programa. Seguiremos el flujo del mismo y comentando su funcionamiento.
 
 ##### Modo_Juego()
 
@@ -279,7 +279,7 @@ En el main de este archivo, se guarda en una variable llamada *election,* la res
 
 ---
 
-Debido a la extensión, dividire el código para una mejor explicación
+Debido a la extensión, dividiremos el código para una mejor explicación
 
 ```python
 from game import player, deal, total_value, turn, cases, clean_terminal
@@ -383,7 +383,7 @@ Se hace lo mismo para el jugador 2, cuando acabe su turno, el contador aumenta e
 
 ---
 
-Esta función se parece mucho a la anterior pero cuenta con una gran diferencia y es que aquí, juega una persona contra el programa. Eso incluye algunos cambios en el código que son los que me dispongo a comentar.
+Esta función se parece mucho a la anterior pero cuenta con una gran diferencia y es que aquí, juega una persona contra el programa. Eso incluye algunos cambios en el código que son los que nos disponemos a comentar.
 
 ```python
     player1 = player()
@@ -471,7 +471,7 @@ def test_player(monkeypatch):
     assert result == 'Naruto53'
 ```
 
-Para ello he utilizado un objeto dummy para probar un valor cualquiera, este input no tienen ninguna restricción.
+Para ello hemos utilizado un objeto dummy para probar un valor cualquiera, este input no tienen ninguna restricción.
 
 ##### Test_cases()
 
@@ -509,9 +509,9 @@ def test_cases_params(hand1, hand2,player1, player2, total1, total2, turn_counte
     assert cases(hand1, hand2,player1, player2, total1, total2, turn_counter) == expected
 ```
 
-He comprobado todos los casos que puede tener la función cases usando @pytest.mark.parametrize.
+Hemos comprobado todos los casos que puede tener la función cases usando @pytest.mark.parametrize.
 
-He puesto los parametros que haran falta para la prueba unitaria y luego he definido esos parametros para el test.
+Hemos puesto los parametros que haran falta para la prueba unitaria y luego hemos definido esos parametros para el test.
 
 ##### Test_total_value()
 
@@ -531,4 +531,4 @@ def test_total_value_params(hand,expected):
     assert total_value(hand) == expected
 ```
 
-Lo he realizado de la misma manera que el anterior.
+Lo hemos realizado de la misma manera que el anterior, para asi comprobar que todo funcione de manera correcta.
