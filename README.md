@@ -7,11 +7,11 @@ seguire el flujo del programa para explicarlo.Tenemos 4 archivos,
 que contienen funciones y un archivo donde se realizan los tests de las funciones.
 ```
 
-    ![1699149897544]((./1699149897544.png))
+    ![1699149897544](image/README/1699149897544.png)
 
 Estos cuatro archivos se encuentran situados en la carpeta src *(source)* siendo:
 
-* Blackjack.p
+* Blackjack.py
 * game.py
 * oneplayer.py
 * twoplayers.py
