@@ -1,4 +1,6 @@
-<p style="text-align: center;"><b>VITRUVIAN'S MAN'S</b></p>
+<p align="center">
+<b>VITRUVIAN'S MAN'S</b>
+</p>
 
 ---
 
