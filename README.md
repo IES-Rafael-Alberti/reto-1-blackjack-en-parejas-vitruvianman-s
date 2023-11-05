@@ -7,7 +7,7 @@ seguire el flujo del programa para explicarlo.Tenemos 4 archivos,
 que contienen funciones y un archivo donde se realizan los tests de las funciones.
 ```
 
-    ![1699149352903](https://github.com/IES-Rafael-Alberti/reto-1-blackjack-en-parejas-vitruvianman-s/blob/main/image/README/1699149352903.png)
+    ![1699149897544](image/README/1699149897544.png)
 
 Estos cuatro archivos se encuentran situados en la carpeta src *(source)* siendo:
 
