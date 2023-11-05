@@ -22,8 +22,6 @@ def match_1player():
     clean_terminal()
 
     while not (stand_player1 and stand_player2) and (total_player1 <= 21 and total_crupier <= 21) and pifiada == True:
-        stand_player1 = False
-        stand_player2 = False
 
         clean_terminal()
 
