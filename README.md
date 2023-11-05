@@ -1,5 +1,5 @@
 
-![](./image/Vitruvian1.jpeg){width="400px;" height=400px;" style="display: block; margin: 0 auto;"}
+![](./image/Vitruvian1.jpeg){width="400" height="400" style="display: block; margin: 0 auto;"}
 
 ## EXPLICACIÓN BLACKJACK VITRUVIAN'S MAN'S
 
