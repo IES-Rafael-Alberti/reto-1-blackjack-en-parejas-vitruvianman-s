@@ -22,7 +22,7 @@ def match_twoplayers():
 
     stand_player1 = False
     stand_player2 = False
-    # stand_player es una constante que se utiliza para saber si un jugador se ha plantado o no
+    # stand_player es una cariable que se utiliza para saber si un jugador se ha plantado o no
 
     pifiada = True
     #pifiada es una variable de control de flujo para que cuando el total del jugador 1 sea superior a 21, se salga del bucle automaticamente
@@ -38,7 +38,7 @@ def match_twoplayers():
         print(f'J2 - {player2} - {player2_hand} ({total_player2})') 
 
         if not stand_player1: #si el jugador no se ha plantado, ejecuta la funcion turn()
-            result_player1 = turn(player1_hand, total_player1, player1)
+            result_player1 = turn(player1_hand, player1)
             if result_player1 == 'plantarse':
                 stand_player1 = True
             else: #sino se cambiara la mano y valor antiguo por los nuevos
@@ -49,7 +49,7 @@ def match_twoplayers():
             pifiada = False
 
         elif not stand_player2:
-            result_player2 = turn(player2_hand, total_player2, player2)
+            result_player2 = turn(player2_hand,player2)
             if result_player2 == 'plantarse':
                 stand_player2 = True
             else:

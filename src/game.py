@@ -15,8 +15,6 @@ def deal():
 
 def total_value(hand):
 
-
-
     total = 0
     for i in range(0,len(hand)):
         if hand[i] == 'J' or hand[i] == 'Q' or hand[i] == '0' or hand[i] == 'K':
@@ -96,7 +94,7 @@ def cases(hand1, hand2,player1, player2, total1, total2, turn_counter):
     """
 
 
-def turn(hand1,total1,player1):
+def turn(hand1,player1):
 
     selection_player = None
     
@@ -151,6 +149,7 @@ def automated_turn(hand1,total1,player1):
                 print('1')
                 time.sleep(1)
                 return 'plantarse'
+            
 """
 Si el nombre del jugador que interactua con la función es 'crupier', juegue de manera automática
 según las instrucciones que se ha programado que es la que los crupieres reales suelen usar en la vida real, bajo normas del casino.

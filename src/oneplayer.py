@@ -32,7 +32,7 @@ def match_1player():
         print(f'J2 - {player_crupier} - {crupier_hand} ({total_crupier})') 
 
         if not stand_player1:
-            result_player1 = turn(player1_hand, total_player1, player1)
+            result_player1 = turn(player1_hand, player1)
             if result_player1 == 'plantarse':
                 stand_player1 = True
             else:
@@ -43,7 +43,7 @@ def match_1player():
             pifiada = False
 
         elif not stand_player2:
-            result_player2 = automated_turn(crupier_hand, total_crupier, player_crupier)
+            result_player2 = automated_turn(crupier_hand, total_crupier, player_crupier) #esta función es el que utiliza la máquina para jugar automáticamente
             if result_player2 == 'plantarse':
                 stand_player2 = True
             else:
