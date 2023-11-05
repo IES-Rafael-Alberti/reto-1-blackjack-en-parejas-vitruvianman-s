@@ -1,3 +1,7 @@
+
+<img src="image/README/Vitruvian.png" alt="Vitruvian" width="400px;" height=400px;" style="display: block; margin: 0 auto;"/>
+
+
 ## EXPLICACIÓN BLACKJACK VITRUVIAN'S MAN'S
 
 ```
@@ -6,7 +10,6 @@ sera el que ejecutemos para jugar al blackjack.Los otros archivos, son
 archivos externos de los cuales se importan funciones para mantener un entorno de trabajo 
 más ordenado
 ```
-
 
 ## FUNCIONAMIENTO BLACKJACK VITRUVIAN'S MAN'S
 
@@ -73,7 +76,7 @@ total = 0
     return total
 ```
 
-Esta función se le introduce el valor de la mano de un jugador.El bucle for se encarga de recorrer cada caracter de la cadena de texto que forma la mano y busca su equivalencia númerica. 
+Esta función se le introduce el valor de la mano de un jugador.El bucle for se encarga de recorrer cada caracter de la cadena de texto que forma la mano y busca su equivalencia númerica.
 
 Las equivalencias son:
 
@@ -142,7 +145,7 @@ También se ha utilizado una resta absoluta de 21 menos el total de cada jugador
 selection_player = None
   
     while selection_player != 1 or selection_player != 2 or selection_player is None:
-    
+  
         print(f'\nTurno de {player1}')
         selection_player = input('1.Plantarse \n2.Pedir carta\n-> ')
         if selection_player.isnumeric():
@@ -150,19 +153,19 @@ selection_player = None
 
         else:
             print('---Introduce un numero válido---')
-        
+    
         if selection_player == 1:
             return 'plantarse'
 
         if selection_player == 2:
 
-       
+   
             hand1 += deal()
 
             return hand1
 ```
 
-Un jugador normal, el cual bajo su propio juicio decide la decisión de si plantarse o pedir carta. 
+Un jugador normal, el cual bajo su propio juicio decide la decisión de si plantarse o pedir carta.
 
 Si elige 2 (pedir carta) llamara la función deal() y lo sumara a la mano actual del jugador. Despues esta nueva mano, es retornada a la función.
 
@@ -188,7 +191,7 @@ selection_player = None
                 execute = True
 
                 return hand1
-            
+        
             if total1 > 17:
                 time.sleep(1)
                 print('1')
@@ -214,8 +217,6 @@ Esta función es para limpiar la terminal durante la ejecución, ese condicional
 
 ---
 
-
-
 ### BLACKJACK.PY
 
 ---
@@ -229,7 +230,7 @@ from twoplayers import match_twoplayers
 from oneplayer import match_1player
 from game import clean_terminal
 
-def Modo_Juego():
+def modo_juego():
   
     election = None
 
@@ -259,10 +260,10 @@ Ahora una variable llamada user_input almacena la respuesta del usuario que la t
 ```python
 def main():
 
-    election = Modo_Juego()
+    election = modo_juego()
 
     if election == 1:
-    
+  
         match_twoplayers()
    
     else:
@@ -272,8 +273,6 @@ def main():
 En el main de este archivo, se guarda en una variable llamada *election,* la respuesta del usuario, el cual dependiendo de lo que haya elegido, llamara a la función main de un archivo u de otro, eligiendo así un modo de juego y ejecutando su partida
 
 ---
-
-
 
 ### Match_twoplayers()
 
@@ -367,7 +366,7 @@ Si se incumple una, el bucle finalizara y con ello la partida.
 
 Luego se llama a la función call_terminal() para limpiar la pantalla.
 
-Se comprueba si el jugador se ha plantado o no, si no se ha plantado, se llama a la funcion turn() con los valores de la mano y su correspondiente valor númerico. 
+Se comprueba si el jugador se ha plantado o no, si no se ha plantado, se llama a la funcion turn() con los valores de la mano y su correspondiente valor númerico.
 
 Si el jugador se planta, la variable stand_player se le asigna el valor True y no jugara más turnos, hasta que el siguiente jugador tambien decida plantarse y con ello acabar la partida.
 
@@ -376,8 +375,6 @@ Si el total numerico de las cartas de la mano del jugador 1 es superior a 21, se
 Se hace lo mismo para el jugador 2, cuando acabe su turno, el contador aumenta en 1, así hasta que el bucle se rompa y con ello se llame la función cases() e imprima por pantalla la situación de la partida.
 
 ---
-
-
 
 ### Match_oneplayer()
 
@@ -446,8 +443,6 @@ Lo que cambia es que aquí el jugador2, que es el crupier, utilizara la función
 
 ---
 
-
-
 # TESTS
 
 Dentro de la carpeta de tests se puede encontrar, el archivo test_game.py que contiene los tests de las funciones del archivo game.py
@@ -462,8 +457,6 @@ Hay tests de 3 funciones:
 
 ---
 
-
-
 ```python
 def test_player(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: 'Naruto53')
@@ -476,8 +469,6 @@ Para ello he utilizado un objeto dummy para probar un valor cualquiera, este inp
 ##### Test_cases()
 
 ---
-
-
 
 ```python
 import pytest

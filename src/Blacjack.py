@@ -2,7 +2,7 @@ from twoplayers import match_twoplayers
 from oneplayer import match_1player
 from game import clean_terminal
 
-def Modo_Juego():
+def modo_juego():
     
     election = None
 
@@ -26,7 +26,7 @@ Cuando sea válido, retornara el valor
 
 def main():
 
-    election = Modo_Juego()
+    election = modo_juego()
 
     if election == 1:
         
