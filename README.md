@@ -1,8 +1,6 @@
-<div style="text-align: center;">
-
-![](./image/Vitruvian1.jpeg)
-
-</div>
+<p align="center">
+    <img width="400" height="400" src="/image/Vitruvian1.jpeg">
+</p>
 ## EXPLICACIÓN BLACKJACK VITRUVIAN'S MAN'S
 
 ```
