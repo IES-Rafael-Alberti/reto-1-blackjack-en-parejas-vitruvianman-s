@@ -1,5 +1,8 @@
+<p style="text-align: center; font-size:5vh"><b>VITRUVIAN'S MAN'S</b></p>
+
+---
+
 <p align="center">
-         <h1>VITRUVIAN'S MAN'S</h1>
     <img width="400" height="400" src="/image/Vitruvian1.jpeg">
 </p>
 
