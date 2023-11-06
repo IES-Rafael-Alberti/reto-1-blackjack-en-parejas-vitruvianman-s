@@ -31,7 +31,7 @@ def match_1player():
 
         if not stand_player1:
             result_player1 = turn(player1_hand, player1)
-            if result_player1 == 'plantarse':
+            if result_player1 == 'stand':
                 stand_player1 = True
             else:
                 player1_hand = result_player1
@@ -42,7 +42,7 @@ def match_1player():
 
         elif not stand_player2:
             result_player2 = automated_turn(crupier_hand, total_crupier, player_crupier) #esta función es el que utiliza la máquina para jugar automáticamente
-            if result_player2 == 'plantarse':
+            if result_player2 == 'stand':
                 stand_player2 = True
             else:
                 crupier_hand = result_player2

@@ -44,72 +44,85 @@ def total_value(hand):
     return total
 
 
-def cases(hand1, hand2,player1, player2, total1, total2, turn_counter):
-    """Possible cases of the end of the game
+def cases(hand1,hand2,player1,player2,total1,total2,turn_counter):
+    """Possible cases of the end of the game.
 
     By the variables of the function, the end of the game will have
-    different situations
+    4 different situations.
+
+    Args:
+        hand1 (str): 
+            The hand of the player1.
+        hand2 (str): 
+            The hand of the player2.
+        player1 (str): 
+            Nickname of player1.
+        player2 (str): 
+            Nickname of player2.
+        total1 (int):
+            Numerical value of player 1's hand.
+        total2 (int):
+            Numerical value of players 2's hand.
+        turn_counter(int):
+            The counter of the turn of the match.
+
+    Returns:
+        Phrase (str): String with the result of the game.
+        
 
     """
     
     if total1 > 21:
         if total2 > 21:
-            resultado = 'Game over. ¡Los dos la habeis pifiado!'
+            result = 'Game over. ¡Los dos la habeis pifiado!'
 
         else:
-            resultado = f'¡Gana J2 - {player2}!'
+            result = f'¡Gana J2 - {player2}!'
       
     elif total2 > 21:
-        resultado = f'¡Gana J1 - {player1}!'
+        result = f'¡Gana J1 - {player1}!'
   
     else:
         difference1 = abs(21 - total1)
         difference2 = abs(21 - total2)
 
         if difference1 == difference2:
-            resultado = '¡EMPATE!'
+            result = '¡EMPATE!'
 
         elif difference1 < difference2:
-            resultado = f'¡Gana J1 - {player1}!'
+            result = f'¡Gana J1 - {player1}!'
         else:
-            resultado = f'¡Gana J2 - {player2}!'
+            result = f'¡Gana J2 - {player2}!'
 
 
     return (f'JUEGO TERMINADO - Ronda {turn_counter}\n' +
-            f'{resultado}\n' +
+            f'{result}\n' +
             f'J1 - {player1} - {hand1} ({total1})\n' +
             f'J2 - {player2} - {hand2} ({total2})\n')
 
-"""
-    En esta función se introduce la mano del jugador 1 y 2, sus respectivos nombres, el total de cada jugador y el contador
-    de rondas.
 
-    En total solo se pueden dar 4 casos:
+def turn(hand,player):
+    """ A turn of the blackjack game.
 
-    1º caso:
-        Los dos jugadores se pasen de 21
-    2º caso:
-        Que los dos jugadores empaten
-    3º caso:
-        Que gane el jugador 1
-    4º caso:
-        Que gane el jugador 2
+    The player of the turn will be asked to write a option.
+    If its valid it will stand or hit another card.
+    If not will ask again the player for an input.
 
-    Para simplficar el código cada situación carga un valor distinto en la variable resultado que cambia el título de la acción
-    en concreto, más adelante en el return
+    Args:
+        hand1 (str): Hand of one of the players.
+        player (str): The nickname of a player.
 
-    También se ha utilizado una resta absoluta de 21 con el total de cada jugador, ya que permite más precisión a la hora de tratar
-    los datos.
+    Returns:
+
+        hand (str): Hand of the player with one more card.
+        stand (str): A string that will be treated later.
     """
-
-
-def turn(hand1,player1):
 
     selection_player = None
     
     while selection_player != 1 or selection_player != 2 or selection_player is None:
         
-        print(f'\nTurno de {player1}')
+        print(f'\nTurno de {player}')
         selection_player = input('1.Plantarse \n2.Pedir carta\n-> ')
         if selection_player.isnumeric():
             selection_player = int(selection_player)
@@ -118,59 +131,60 @@ def turn(hand1,player1):
             print('---Introduce un numero válido---')
             
         if selection_player == 1:
-            return 'plantarse'
+            return 'stand'
 
         if selection_player == 2:
 
            
-            hand1 += deal()
+            hand += deal()
 
-            return hand1
-"""
-Un jugador normal, el cual bajo su propio juicio decide la decisión de si plantarse o pedir carta.. 
-Si elige 2 (pedir carta) llamara la función deal() y lo sumara a la mano actual del jugador.
-Despues esta nueva mano, es retornada a la función.
+            return hand
 
-Si elige 1 (plantarse) la funcion retorna plantarse para que el programa donde sea llamada, trate la información como se prefiera.
-"""
-        
-def automated_turn(hand1,total1,player1):
+def automated_turn(hand,total,player):
+    """ What the bot does in a turn of the match
+
+    The bot will choose between stand or hit another card, 
+    depending on the value of his hand.
+
+    Args:
+        hand (str): Hand of the bot
+        player (str): The nickname of the bot that always will be crupier
+
+    Returns:
+
+        hand (str): Hand of the bot with one more card.
+        stand (str): A string that will be treated later.
+    """
+
     selection_player = None
     execute = False
 
     while selection_player != 1 or selection_player is None or execute is not False:
 
-        if player1 == 'crupier':
-            print(f'\nTurno de {player1}')
+        if player == 'crupier':
+            print(f'\nTurno de {player}')
             print('1.Plantarse \n2.Pedir carta\n-> ', end = '')
-            while not execute and total1 <=17 :
+            while not execute and total <=17 :
                 time.sleep(1)
                 print('2\n', end = '')
                 time.sleep(1)
-                total1 = 0
-                hand1 += deal()
+                total = 0
+                hand += deal()
                 execute = True
 
-                return hand1
+                return hand
                 
-            if total1 > 17:
+            if total > 17:
                 time.sleep(1)
                 print('1')
                 time.sleep(1)
-                return 'plantarse'
-            
-"""
-Si el nombre del jugador que interactua con la función es 'crupier', juegue de manera automática
-según las instrucciones que se ha programado que es la que los crupieres reales suelen usar en la vida real, bajo normas del casino.
-
-Mientras el total de sus cartas sea igual o inferior a 17, siga cogiendo cartas y si su total es mayor a 17 que retorne plantarse
-y ya en el programa donde se llame la función se tratara esa información.
-"""
+                return 'stand'
             
 def clean_terminal():
-    """
-    Esta función es para limpiar la terminal durante la ejecución, ese condicional es para que pueda ejecutarse
-    tanto como en windows 
+    """Clean the terminal
+
+    Will print in the terminal a command depending of the operating system.
+    
     """
     if os.name == 'nt':
         os.system('cls')

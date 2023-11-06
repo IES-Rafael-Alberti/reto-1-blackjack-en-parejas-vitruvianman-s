@@ -35,7 +35,8 @@ def modo_juego(election = None):
 def main():
 
     """
-    Depending on the election made by the player, the program will call one of the modules from other archives.
+    Depending on the election made by the player, the program will call one of the modules from other archives
+    and print the result of it.
 
     """
 
@@ -43,10 +44,10 @@ def main():
 
     if election == 1:
         
-        match_twoplayers()
+        print(match_twoplayers())
    
     else:
-        match_1player()
+        print(match_1player())
 
 
 if __name__ == "__main__":
