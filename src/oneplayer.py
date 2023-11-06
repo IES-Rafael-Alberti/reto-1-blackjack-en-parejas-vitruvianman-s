@@ -15,7 +15,7 @@ def match_1player():
     
     """
     player1 = player()
-    player_crupier = 'crupier' #trata al crupier, la máquina, como si fuera un 2 jugador automatizado.
+    player_crupier = 'crupier' #treats the dealer, the machine, as if it were an automated 2 player.
 
     player1_hand = deal()
     crupier_hand = deal()
@@ -51,7 +51,7 @@ def match_1player():
             pifiada = False
 
         elif not stand_player2:
-            result_player2 = automated_turn(crupier_hand, total_crupier, player_crupier) #esta función es el que utiliza la máquina para jugar automáticamente
+            result_player2 = automated_turn(crupier_hand, total_crupier, player_crupier) #This function is what the machine uses to play automatically
             if result_player2 == 'stand':
                 stand_player2 = True
             else:
