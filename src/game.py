@@ -3,17 +3,22 @@ import os
 import time 
 
 def player():
+    """Ask for the nickname of the player
+
+    """
 
     return input('Introduce tu nombre -> ')
 
 def deal():
+    """Return one of the cards from the desk
 
+    """
     deck = 'A234567890JKQ' 
 
-    return deck[random.randint(0,12)] #carta aleatoria entre 1 a 13
+    return deck[random.randint(0,12)] #random card between 1 and 13
 
 
-def total_value(hand):
+def total_value(hand:str) -> int:
     """ Transform the text from the hand to numeric value 
 
     Get each letter in hand variable, it pass for a loop that every time check each
@@ -44,7 +49,7 @@ def total_value(hand):
     return total
 
 
-def cases(hand1,hand2,player1,player2,total1,total2,turn_counter):
+def cases(hand1:str,hand2:str,player1:str,player2:str,total1:int,total2:int,turn_counter:int) -> str:
     """Possible cases of the end of the game.
 
     By the variables of the function, the end of the game will have
@@ -101,7 +106,7 @@ def cases(hand1,hand2,player1,player2,total1,total2,turn_counter):
             f'J2 - {player2} - {hand2} ({total2})\n')
 
 
-def turn(hand,player):
+def turn(hand:str,player:str) -> str:
     """ A turn of the blackjack game.
 
     The player of the turn will be asked to write a option.
@@ -140,7 +145,7 @@ def turn(hand,player):
 
             return hand
 
-def automated_turn(hand,total,player):
+def automated_turn(hand:str,total:int,player:str) -> str:
     """ What the bot does in a turn of the match
 
     The bot will choose between stand or hit another card, 
