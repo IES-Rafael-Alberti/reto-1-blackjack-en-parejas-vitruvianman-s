@@ -14,7 +14,19 @@ def deal():
 
 
 def total_value(hand):
+    """ Transform the text from the hand to numeric value 
 
+    Get each letter in hand variable, it pass for a loop that every time check each
+    letter of it, and adding the numeric equivalent of it.
+
+    Args: 
+        hand (str): The hand of the player 
+
+    Returns: 
+        total (int): The numeric value of the player hand
+
+
+    """
     total = 0
     for i in range(0,len(hand)):
         if hand[i] == 'J' or hand[i] == 'Q' or hand[i] == '0' or hand[i] == 'K':
@@ -30,18 +42,15 @@ def total_value(hand):
             total += int(hand[i])
 
     return total
-"""
-Cada vez que la función se ejecuta, se relee toda la cadena de caracters y se vuelven a sumar sus valores.Principalmente 
-para cuando la letra A que tiene doble valor, se escoja el que más convenga. 
-Ejemplo:
 
-A3 -> La A valdra 11, retornando la función 11
-A38 -> Como en esta ocasión, si la A vale 11, la función retornaría 22, cosa que el jugador no le conviene.
-Por tanto se retornaría como 12 debido a que la A puede valer 1, en función de como le conviene al jugador.
-
-"""
 
 def cases(hand1, hand2,player1, player2, total1, total2, turn_counter):
+    """Possible cases of the end of the game
+
+    By the variables of the function, the end of the game will have
+    different situations
+
+    """
     
     if total1 > 21:
         if total2 > 21:
